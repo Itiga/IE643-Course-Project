@@ -1,12 +1,12 @@
 # Lip-Sync-STS
-When we translate a video from one language to another, lips get out of sync due to characteristics of different languages. So, in this project, we built a model to Sync the Lips in accordance with the Audio. To keep the project uncomplicated project was divided into two tasks-
+We built a model to Sync the Lips in accordance with the Audio. When we translate a video from one language to another, lips get out of sync due to characteristics of different languages. So, the project was divided into two tasks-
 
-Task 1- Translate the audio from English to Hindi.<br/>
-Task 2- Sync the Lips of video according to generated Hindi audio.
+Task 1- Translate the audio from any Indian Language to any other Indian Language.<br/>
+Task 2- Sync the Lips of video according to generated Language audio.
 
 ## Task 1
-In this task, for speech-to-speech translation, we use an automatic speech recognizer (ASR) to transcribe text from the original speech in Hindi language. We adapt neural machine translation and text-to-speech models to work for Indian languages and generate translated speech. The Task 1 proceeds in following way:<br/><br/> Video  -> English Audio  -> English Text  -> Hindi Text  -> Hindi Audio.<br/><br/>
-The input given is the video with audio in English language. We extracted English audio from video using Moviepy library. Then converted this audio to text using Deepvoice 2 model of Pytorch. Then translated this English text to Hindi Text using a language translation model of huggingface. There was limit of 5000 bytes for this model, so we broke the text into several chunks of 2000 bytes and then applied the model. After that using Google API, we generated voice from the translated Hindi text and will merge it using Lip GAN. We adopt this approach to achieve high quality text-to-speech synthesis in our target language.<br/>
+In this task, for speech-to-speech translation, we use an automatic speech recognizer (ASR) to transcribe text from the original speech in any Indian language. We adapt neural machine translation and text-to-speech models to work for Indian languages and generate translated speech. The Task 1 proceeds in following way:<br/><br/> Video  -> Hindi Audio  -> Hindi Text  -> Tamil Text  -> Tamil Audio.<br/><br/>
+The input given is the video with audio in HIndi language. We extracted HIndi audio from video using Moviepy library. Then converted this audio to text using Deepvoice 2 model of Pytorch. Then translated this Hindi text to Tamil Text using a language translation model of huggingface. There was limit of 5000 bytes for this model, so we broke the text into several chunks of 2000 bytes and then applied the model. After that using Google API, we generated voice from the translated Hindi text and will merge it using Lip GAN. We adopt this approach to achieve high quality text-to-speech synthesis in our target language.<br/>
 https://colab.research.google.com/drive/1scp7LqkbFx5QghIPU3W4F-7771BzNV9S?usp=sharing
 
 <a href="url"><img src="https://user-images.githubusercontent.com/79749572/167295444-d010a382-8026-460e-bcc2-83eb76225dad.png" width="720" height = "350">
