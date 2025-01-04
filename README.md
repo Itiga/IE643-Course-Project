@@ -6,13 +6,10 @@ Task 2- Sync the Lips of video according to generated Language audio.
 
 ## Task 1
 In this task, for speech-to-speech translation, we use an automatic speech recognizer (ASR) to transcribe text from the original speech in any Indian language. We adapt neural machine translation and text-to-speech models to work for Indian languages and generate translated speech. The Task 1 proceeds in following way:<br/><br/> Video  -> Hindi Audio  -> Hindi Text  -> Tamil Text  -> Tamil Audio.<br/><br/>
-The input given is the video with audio in HIndi language. We extracted HIndi audio from video using Moviepy library. Then converted this audio to text using Deepvoice 2 model of Pytorch. Then translated this Hindi text to Tamil Text using a language translation model of huggingface. There was limit of 5000 bytes for this model, so we broke the text into several chunks of 2000 bytes and then applied the model. After that using Google API, we generated voice from the translated Hindi text and will merge it using Lip GAN. We adopt this approach to achieve high quality text-to-speech synthesis in our target language.<br/>
-https://colab.research.google.com/drive/1scp7LqkbFx5QghIPU3W4F-7771BzNV9S?usp=sharing
-
-<a href="url"><img src="https://user-images.githubusercontent.com/79749572/167295444-d010a382-8026-460e-bcc2-83eb76225dad.png" width="720" height = "350">
+The input given is the video with audio in HIndi language. We extracted HIndi audio from video using Moviepy library. Then converted this audio to text using Deepvoice 2 model of Pytorch. Then translated this Hindi text to Tamil Text using a language translation model of huggingface. There was limit of 5000 bytes for this model, so we broke the text into several chunks of 2000 bytes and then applied the model. After that using Google API, we generated voice from the translated Hindi text and will merge it using Lip GAN. We adopt this approach to achieve high quality text-to-speech synthesis in our target language.
 
 ## Task 2
-In this task we are given with a source or input video and a translated audio speech in Hindi. The translated audio is created using the English audio or speech from given input video file. Our task is to generate a lip-synced video having speech language as Hindi using these two inputs. <br/>
+In this task we are given with a source or input video and a translated audio speech in Tamil. The translated audio is created using the HIndi audio or speech from given input video file. Our task is to generate a lip-synced video having speech language as Tamil using these two inputs. <br/>
 This task consists of a GAN network having a generator to generate lip-synced frames and discriminator to check whether lip-synced occurred or not. Both are discussed in detail later on 
 
 ## Model Formulation
